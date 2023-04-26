@@ -51,10 +51,11 @@
       }
 
       function loadFileFromUrl(url) {
-        fetch(url)
-          .then((response) => response.blob())
-          .then((content) => generate(content));
-      }
+  fetch(url, { responseType: "blob" })
+    .then((response) => response.blob())
+    .then((content) => generate(content));
+}
+
 
       const loadFileBtn = document.getElementById("load-file-btn");
       const url = "nayafile/template.docx"; 
