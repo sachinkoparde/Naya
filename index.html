@@ -54,8 +54,12 @@
       function loadFileFromUrl(url) {
   fetch(url, { responseType: "blob" })
     .then((response) => response.blob())
-    .then((content) => generate(content));
+    .then((content) => {
+      console.log(content); // add this line to log the content
+      generate(content);
+    });
 }
+
 
 
       const loadFileBtn = document.getElementById("load-file-btn");
